@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useReducer, useContext } from 'react';
 import './App.css';
+import Paper from '@material-ui/core/Paper';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import {People} from './Components/people';
+import {Header} from './Components/header';
+import {AddTransaction} from './Components/AddTransaction';
+import {Transaction} from './Components/transaction';
+import {GlobalProvider} from './Context/GlobalContext';
+import {IncomeExpense} from './Components/incomeExpense';
+import {TransactionList} from './Components/transactionList';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    overflow: 'hidden',
+    padding: theme.spacing(0, 10),
+  },
+  heading: {
+      color: "white"
+  },
+
+}));
+
 
 function App() {
+
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <GlobalProvider>
+        <div className={classes.root}>
+          <Header />
+          <Grid container spacing={3}>
+            <Grid item xs={5}>
+              <AddTransaction />
+            </Grid>
+            <Grid item xs={6}>
+              <Transaction />          
+              <IncomeExpense />
+              <TransactionList />
+            </Grid>
+          </Grid>
+        </div>
+      </GlobalProvider>
+    );
+  
 }
 
 export default App;
