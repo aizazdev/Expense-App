@@ -1,12 +1,7 @@
 import React, {useContext, useState} from 'react';
-import { fade,ThemeProvider,withStyles,makeStyles,createMuiTheme,
-} from '@material-ui/core/styles';
-import InputBase from '@material-ui/core/InputBase';
-import InputLabel from '@material-ui/core/InputLabel';
+import {withStyles,makeStyles,
+} from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
-import { green } from '@material-ui/core/colors';
-import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
 import globalContext from './../Context/GlobalContext';
 
@@ -68,13 +63,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-
-const theme = createMuiTheme({
-  palette: {
-    primary: green,
-  },
-});
-
 export const AddTransaction = ()=> {
   const classes = useStyles();
   const[name, setName] = useState("");
@@ -84,7 +72,7 @@ export const AddTransaction = ()=> {
   const{ addTransaction } = useContext(globalContext);
   const newTransaction = {
     name,
-    amount: (symbol == '+' ? Number(amount) : Number(-amount))
+    amount: (symbol === '+' ? Number(amount) : Number(-amount))
   }
 
   const handleSubmit = (e)=> {

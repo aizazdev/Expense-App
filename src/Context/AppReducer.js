@@ -14,5 +14,7 @@ export const reducer = (state, action) => {
                 ...state,
                 transaction: state.transaction.filter(trans=> trans.name !== action.payload)
             }
+        default: 
+            return state
     }
 } 

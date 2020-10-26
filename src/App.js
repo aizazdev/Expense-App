@@ -1,9 +1,7 @@
-import React, { useReducer, useContext } from 'react';
+import React from 'react';
 import './App.css';
-import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import {People} from './Components/people';
 import {Header} from './Components/header';
 import {AddTransaction} from './Components/AddTransaction';
 import {Transaction} from './Components/transaction';

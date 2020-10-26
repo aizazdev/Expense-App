@@ -36,7 +36,7 @@ export const TransactionList = ()=> {
         {
             transaction.map((t, ind) => {
                 return(
-                    <Paper className={classes.paper}>
+                    <Paper className={classes.paper} key={ind}>
                         <Grid container wrap="nowrap" spacing={2}>
                         <Grid item xs zeroMinWidth>
                             <Typography noWrap>{t.name}</Typography>
