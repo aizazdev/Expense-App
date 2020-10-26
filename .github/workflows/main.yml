@@ -40,4 +40,4 @@ jobs:
       
       
     - name: deploying on surge
-      run: surge ./build http://https://magical-sheet.surge.sh/ --token ${{ secrets.SURGE_TOKEN}}
+      run: surge ./build http://magical-sheet.surge.sh/ --token ${{ secrets.SURGE_TOKEN}}
