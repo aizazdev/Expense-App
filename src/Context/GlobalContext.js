@@ -2,8 +2,8 @@ import React, { createContext, useReducer } from 'react';
 import {reducer} from './AppReducer';
 
 const initialState ={
-    transaction: [{name: 'aiizaz', amount: 3},
-    {name: 'ahmad', amount: 5}]
+    transaction: [{name: 'Apple', amount: 3},
+    {name: 'Banana', amount: 5}]
 };
 
 const globalContext = createContext(initialState);
